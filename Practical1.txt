@@ -1,0 +1,33 @@
+What can Node.js do?
+Ans:Node.js is an open-source, cross-platform JavaScript runtime environment 
+and library for running web applications outside the client's browser.
+
+
+* Create a Node.js file that renames the existing file name with
+  new file name using the File System module.
+
+
+// Node.js program to demonstrate the     
+// fs.rename() method  
+// Import filesystem module 
+const fs = require('fs'); 
+   
+// List all the filenames before renaming 
+getCurrentFilenames(); 
+   
+// Rename the file 
+fs.rename('hello.txt', 'world.txt', () => { 
+  console.log("\nFile Renamed!\n"); 
+   
+  // List all the filenames after renaming 
+  getCurrentFilenames(); 
+}); 
+   
+// Function to get current filenames 
+// in directory 
+function getCurrentFilenames() { 
+  console.log("Current filenames:"); 
+  fs.readdirSync(__dirname).forEach(file => { 
+    console.log(file); 
+  }); 
+} 
